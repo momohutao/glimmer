@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 210px;
+            border:5px solid deepskyblue;
+            
+            background-color: azure;
+            display:flex;
+            flex-wrap: wrap;
+            border-radius: 10px;
+             
+        }
+         
+         
+        .box1,.box2,.box3{
+            background-color: green;
+            width:60px;
+            height:30px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .box4,.box5,.box6{
+            background-color:blue;  
+            width:60px;
+            height:30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .box7,.box8,.box9{
+            background-color:yellow;  
+            width:60px;
+            height:30px;
+            margin-top: 15px;
+            margin-bottom:30px;
+            border-radius: 10px;
+        }
+        .box1,.box4,.box7{
+            margin-left: 30px;
+            margin-right: 15px;
+        }
+        .box2,.box5,.box8{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .box3,.box6,.box9{
+            margin-right: 30px;
+            margin-left: 15px;
+        }
+        .big{
+            width: 300px;
+            height: 210px;
+            border:5px solid deepskyblue;
+            
+            background-color: azure;
+            display:flex;
+            flex-wrap: wrap;
+            border-radius: 10px;
+            
+             
+        }
+         
+         
+        .item1,.item2,.item3{
+            background-color: green;
+            width:60px;
+            height:30px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .item4,.item5,.item6{
+            background-color:blue;  
+            width:60px;
+            height:30px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .item7,.item8,.item9{
+            background-color:yellow;  
+            width:60px;
+            height:30px;
+            margin-top: 15px;
+            margin-bottom:30px;
+            border-radius: 10px;
+        }
+        .item1,.item4,.item7{
+            margin-left: 30px;
+            margin-right: 15px;
+        }
+        .item2,.item5,.item8{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .item3,.item6,.item9{
+            margin-right: 30px;
+            margin-left: 15px;
+        }
+        .large{
+            height:100%;  
+        }
+        
+        @media screen and (min-width:636px){
+            .large{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center; 
+            margin-top: 220px;
+            }
+            .big,.container{
+                margin:auto;
+
+            }
+        }     
+         
+        @media screen and (max-width:636px){
+            .large{
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content:center;
+            margin-top: 81px;
+             
+        }
+             .container{
+              margin-bottom: 81px;   
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="large">   
+        <div class="container"> 
+    <div class="box1 "></div>
+    <div class="box2 "></div>
+    <div class="box3 "></div>
+    <div class="box4 "></div>
+    <div class="box5"></div>
+    <div class="box6 "></div>
+    <div class="box7 "></div>
+    <div class="box8 "></div>
+    <div class="box9 "></div>
+    </div>
+    
+    <div class="big"> 
+    <div class="item1 "></div>
+    <div class="item2 "></div>
+    <div class="item3 "></div>
+    <div class="item4 "></div>
+    <div class="item5"></div>
+    <div class="item6 "></div>
+    <div class="item7 "></div>
+    <div class="item8 "></div>
+    <div class="item9 "></div>
+    </div>
+</div>
+ 
+</body>
+</html>
