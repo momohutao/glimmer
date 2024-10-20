@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("./photo-1728997150636-91ef00ba7e59.jpg");
+            background-size: 100%, 100%;
+            background-position: center top;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-family: "Simsun";
+            font-size: 50px;
+
+
+        }
+
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        p {
+            color: white;
+            font-size: 25px;
+            font-family: "Simsun";
+
+        }
+
+        footer {
+            color: aliceblue;
+            font-size: 12px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            height: 32px;
+        }
+
+        .header {
+            background: inherit;
+            font-size: 40px;
+            font-weight: 900;
+            color: aliceblue;
+            position: absolute;
+            width: 600px;
+            height: 50px;
+            line-height: 50px;
+            transform: translate(-50%, 0);
+            left: 50%;
+            margin-top: 100px;
+
+        }
+
+        .header::before {
+            content: "";
+            background: inherit;
+            position: absolute;
+            width: 650px;
+            height: 100px;
+            box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+            filter: blur(15px);
+            left: -25px;
+            right: 0;
+            top: -25px;
+            bottom: 0;
+
+        }
+
+        .main {
+            clear: both;
+            margin-top: 200px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .glowIn {
+            color: white;
+
+            span {
+                animation: glow-in 0.8s both;
+            }
+        }
+
+        @keyframes glow-in {
+            from {
+                opacity: 0;
+            }
+
+            65% {
+                opacity: 1;
+                text-shadow: 0 0 25px white;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>为什么选择前端 </h1>
+        </div>
+        <div class="main">
+            <p class="glowIn">
+                选择前端，首先是因为前端的内容相较于其他方向更加直观具体，清晰明了，做出一个东西能给我提供正反馈，促使我向后学习。虽然后来的JavaScript越学越难，但学习前端的过程整体还是很愉快的。
+             <br>其次微光娘的故事好好玩，我觉得背后出题人一定也很聪明不失风趣。</p>
+        </div>
+
+        <footer>© 2024 HuTao</footer>
+    </div>
+    <script>
+        let glowInTexts = document.querySelectorAll(".glowIn");
+        glowInTexts.forEach(glowInText => {
+            let letters = glowInText.textContent.split("");
+            glowInText.textContent = "";
+            letters.forEach((letter, i) => {
+                let span = document.createElement("span");
+                span.textContent = letter;
+                span.style.animationDelay = `${i * 0.05}s`;
+                glowInText.appendChild(span);
+            })
+        })
+    </script>
+
+</body>
+
+</html>

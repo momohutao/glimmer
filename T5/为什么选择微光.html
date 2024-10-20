@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("./photo-1728997150636-91ef00ba7e59.jpg");
+            background-size: 100%, 100%;
+            background-position: center top;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-family: "Simsun";
+            font-size: 50px;
+
+
+        }
+
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        p {
+            color: white;
+            font-size: 25px;
+            font-family: "Simsun";
+
+        }
+
+        footer {
+            color: aliceblue;
+            font-size: 12px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            height: 32px;
+        }
+
+        .header {
+            background: inherit;
+            font-size: 40px;
+            font-weight: 900;
+            color: aliceblue;
+            position: absolute;
+            width: 600px;
+            height: 50px;
+            line-height: 50px;
+            transform: translate(-50%, 0);
+
+            margin-top: 100px;
+            left: 50%;
+
+        }
+
+        .header::before {
+            content: "";
+            background: inherit;
+            position: absolute;
+            width: 650px;
+            height: 100px;
+            box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
+            filter: blur(10px);
+            left: -25px;
+            right: 0;
+            top: -25px;
+            bottom: 0;
+
+        }
+
+        .main {
+            clear: both;
+            margin-top: 200px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .glowIn {
+            color: white;
+
+            span {
+                animation: glow-in 0.8s both;
+            }
+        }
+
+        @keyframes glow-in {
+            from {
+                opacity: 0;
+            }
+
+            65% {
+                opacity: 1;
+                text-shadow: 0 0 25px white;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>为什么选择微光 </h1>
+        </div>
+        <div class="main">
+            <p class="glowIn">选择微光，首先是因为“心有微光，不惧黑暗”的口号，真的好励志，一下就吸引了我，我希望在大学的生活中也可以做到口号那样尝试一些没尝试过的东西，带着希望得到个人更好的发展。</p>
+            <p class="glowIn">其次是因为在招新开始前，我询问了各个工作室的具体流程，其中微光的学长回复热情又细心，作为零基础的小白我于是就只报了微光一个工作室。而在做题的过程中，各位学长或学姐都是很认真负责的，这种工作室的氛围让我羡慕喜欢。
+            </p>
+            <p class="glowIn">最后是因为微光确实综合实力很强，各位学长都很厉害，保研就业样样都行，我希望加入工作室后能获得一些指导，同时也能指导我以后的学弟学妹，这可真是想想都开心，虽然进去希望不大哈哈，但我大二也会再次尝试的。</p>
+        </div>
+        <footer>© 2024 HuTao</footer>
+
+    </div>
+    <script>
+        let glowInTexts = document.querySelectorAll(".glowIn");
+        glowInTexts.forEach(glowInText => {
+            let letters = glowInText.textContent.split("");
+            glowInText.textContent = "";
+            letters.forEach((letter, i) => {
+                let span = document.createElement("span");
+                span.textContent = letter;
+                span.style.animationDelay = `${i * 0.05}s`;
+                glowInText.append(span);
+            })
+        })
+    </script>
+</body>
+
+</html>

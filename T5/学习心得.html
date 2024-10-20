@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("./photo-1728997150636-91ef00ba7e59.jpg");
+        background-size: 100%, 100%;
+        background-position: center top;
+    }
+
+    h1 {
+        text-align: center;
+        color: aliceblue;
+        font-family: "Simsun";
+        font-size: 50px;
+
+
+    }
+
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    p {
+        color: aliceblue;
+        font-size: 25px;
+        font-family: "Simsun";
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+
+    footer {
+        color: aliceblue;
+        font-size: 12px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        height: 32px;
+    }
+
+    .header {
+        background: inherit;
+        font-size: 40px;
+        font-weight: 900;
+        color: aliceblue;
+        position: absolute;
+        width: 300px;
+        height: 50px;
+        line-height: 50px;
+        transform: translate(-50%, 0);
+        left: 50%;
+        margin-top: 100px;
+
+    }
+
+    .header::before {
+        content: "";
+        background: inherit;
+        position: absolute;
+        width: 350px;
+        height: 100px;
+        box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);
+        filter: blur(20px);
+        left: -25px;
+        right: 0;
+        top: -25px;
+        bottom: 0;
+
+    }
+
+    .main {
+        clear: both;
+        margin-top: 200px;
+    }
+
+    span {
+        color: aqua
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>学习心得</h1>
+        </div>
+        <hr color="aliceblue">
+        <div class="main">
+            <p>毛玻璃效果</p>
+
+            <p>.header {
+                <br> background: inherit;//与父元素背景相同
+                <br>font-size: 40px;
+                <br>font-weight: 900;
+                <br> color: aliceblue;
+                <br> position: absolute;
+                <br>width: 300px;
+                <br>height: 50px;
+                <br>line-height: 50px;
+                <br>transform: translate(-50%,0);
+                <br>left:50%;
+                <br>margin-top: 100px;
+
+                <br>}
+
+                <br>.header::before {//伪元素，用于在div 元素的内容前面插入额外的内容，这通常用于添加一些前缀文本、目标、装饰或其他视觉元素，伪元素的父元素是他们修饰的div
+                <br>content: "";
+                <br>background: inherit;
+                <br> position: absolute;
+                <br>width: 350px;
+                <br>height: 100px;
+                <br>box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.3);//inset
+                内阴影，不会延伸到元素外部边缘;000阴影偏移量为0;3000px宽度为3000px
+                <br>filter: blur(20px);//模糊半径为20px
+                <br> left: -25px;//以便伪元素定位在div的外部
+                <br> right: 0;
+                <br> top: -25px;
+                <br> bottom: 0;
+
+                <br>}
+                <p>霓虹灯效果（首页标题）</p>
+                <p>
+                    <br> .banner{
+                    <br>background:inherit;
+                    <br>font-size:40px;
+                    <br> font-weight:900;
+                    <br>color: #cce7f8;
+                    <br> position:absolute;//绝对定位响应式居中
+                    <br>width:600px;
+                    <br>height:50px;
+                    <br>line-height: 50px;
+                    <br> top:50%;//绝对定位响应式居中
+                    <br> left:50%;//绝对定位响应式居中
+                    <br> transform: translate(-50%, -50%);//绝对定位响应式居中
+                    <span>animation: shining 0.1s alternate
+                        infinite;</span>//动画名为shining,0.1s为延迟时间,alternate反向放，infinite无限次循环
+                    <br> }
+
+                    <span>@keyframes shining {
+                        <br>from {
+                        <br>text-shadow: 0 0 6px rgba(182, 211, 207, 0.9),
+                        <br> 0 0 30px rgba(182, 211, 207, 0.3), 0 0 12px rgba(15, 115, 223, 0.5),
+                        <br> 0 0 21px rgba(15, 115, 223, 0.9), 0 0 34px rgba(15, 115, 223, 0.8),
+                        <br> 0 0 54px rgba(15, 115, 223, 0.9);//多个阴影叠加的效果
+                        <br>}
+                        <br>to {
+                        <br> text-shadow: 0 0 6px rgba(182, 211, 207, 1),
+                        <br> 0 0 30px rgba(182, 211, 207, 0.4), 0 0 12px rgba(15, 115, 223, 0.6),
+                        <br> 0 0 22px rgba(15, 115, 223, 0.8), 0 0 38px rgba(15, 115, 223, 0.9),
+                        <br> 0 0 60px rgba(15, 115, 223, 1);
+                        <br> }
+                        }</span>
+
+                </p>
+                <p>逐字打亮（为什么选择微光、前端的内容部分）</p>
+
+                <p> <br> HTML:&lt;h1 class="glowIn"&gt;Hello World&lt;/h1&gt;
+                    <br> &lt;p class="glowIn"&gt;Hello&lt;/p&gt;
+                    <br> css:.glowIn {
+                    <br> color: white;
+
+                    <br> span {
+                    <br> animation: glow-in 0.8s both;
+                    <br> }
+                    <br> }
+
+                    <br> @keyframes glow-in {
+                    <br> from {
+                    <br> opacity: 0;
+                    <br> }
+
+                    <br> 65% {
+                    <br> opacity: 1;
+                    <br> text-shadow: 0 0 25px white;
+                    <br> }
+
+                    <br> 75% {
+                    <br> opacity: 1;
+                    <br> }
+
+                    <br> to {
+                    <br> opacity: 0.7;
+                    <br> }
+                    <br> }
+                    <br> JS:let glowInTexts = document.querySelectorAll(".glowIn");//glowInTexts数组将包含两个元素,一个h1,一个p
+                    <br> glowInTexts.forEach(glowInText =>
+                    {//第一次glowInTexts[0]被赋值给glowInText,它实际是h1;第二次glowInTexts[1]被赋值给glowInText,它实际是p
+                    <br> let letters =
+                    glowInText.textContent.split("");//glowInText.textContent获取glowInText中的文本内容;h1时letters将是 ['H', 'e',
+                    'l',
+                    'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+                    <br> glowInText.textContent = "";//清空glowInText的文本内容
+                    <br> letters.forEach((letter, i) => {//遍历letters中每个元素，i是下标
+                    <br> let span = document.createElement("span");
+                    <br> span.textContent = letter;
+                    <br> span.style.animationDelay = `${i * 0.05}s`;
+                    <br> glowInText.append(span);//将span元素添加到glowInText元素的子元素末尾append可换成appendChild
+                    <br> })//不设置span ,glowInText不是实际的DOM元素（标签），无法添加样式
+                    <br> })
+                </p>
+        </div>
+        <footer>© 2024 HuTao</footer>
+    </div>
+
+</body>
+
+</html>
