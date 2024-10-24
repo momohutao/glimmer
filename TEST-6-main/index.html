@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+
+    </style>
+</head>
+<script src=" jquery.min.js "></script>
+
+<body>
+    <div id="area">
+        <img src="./img/EDG.png" alt="" class="EDG">
+        <img src="./img/FPX.png" alt="" class="FPX">
+        <img src="./img/TE.png" alt="" class="TE">
+        <img src="./img/BLG.png" alt="" class="BLG">
+    </div>
+    <div id="bottom">
+        <input type="button" value="开始支持投票" style="display: block;margin: auto; margin-top: 30px;height: 30px;">
+    </div>
+    <script>
+        $(document).ready(function () {
+            let teams = $("img");
+            teams.each(function () {
+                $(this).data("votes", 0);
+            });
+            $("#bottom > input").click(function () {
+                teams.each(function (i, domEle) {
+                    if (i % 2 == 0) {
+                        $(domEle).data("votes", $(domEle).data("votes") + 1);
+                    } if (i == teams.length - 3) {
+                        $(domEle).data("votes", $(domEle).data("votes") + 1);
+                    } if ($(domEle).hasClass("EDG")) {
+                        $(domEle).data("votes", $(domEle).data("votes") + 1);
+
+                    }
+                })
+                let mostVotes = 0;
+                let mostVotedTeam = null;
+                teams.each(function () {
+                    if ($(this).data("votes") > mostVotes) {
+                        mostVotes = $(this).data("votes");
+                        mostVotedTeam = $(this);
+
+                    }
+                })
+                teams.each(function (i, domEle) {
+                    if (i == 0 && $(domEle).data("votes") == mostVotes) {
+                        $(domEle).data("votes", $(domEle).data("votes") + 1);
+                    }
+                })
+                teams.each(function (i, domEle) {
+                    $(domEle).animate({
+                        left: 100 * $(domEle).data("votes") + "px"
+                    }, 500), function () {
+
+                    }
+
+                })
+                 
+                var div = $("<div>", {
+                    style: "animation: fadeIn 2s;color:white",
+                    text: mostVotedTeam.attr('class')
+                });
+                $("#bottom").append(div);
+                $("#area img").css({ position: "relative" });
+
+            })
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
